@@ -214,44 +214,85 @@ position: relative;
 .close-btn:hover {
   background: #fa3538;
 }
+
+.fixed-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #28292e;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4px;
+  z-index: 1000;
+  border-top: 1px solid #444;
+  padding: 6px 4px;
+}
+
+.bar-button {
+  flex: 1;
+  margin: 0 4px;
+  min-height: 64px;
+  height: auto;
+  padding: 8px 4px;
+  font-size: 0.75rem;
+  background: #2f3136;
+  border: 1px solid #38393e;
+  color: #9b9ca3;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-button:hover {
+  background: #404249;
+}
+
+.bar-button img {
+  height: 1.8em;
+  margin-bottom: 4px;
+}
+
+.btn-label {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.1;
+}
+
   </style>
 </head>
 
 
 <body>
 
-  <div>
-    <h1 class="title-main">
-  <span class="first-line">KASSANDRA RAUDMAN</span><br>
-  <span class="second-line">FREELANCE VIDEO EDITOR &amp; CONTENT MANAGER</span>
-</h1>
-  </div>
-  <div class="buttons">
-    <a href="https://www.youtube.com/@kassandraraudman" class="btn" target="_blank">Portfolio</a>
-    <a href="mailto:kassandraraudman@gmail.com" class="btn">Contact</a>
-    <button class="btn" onclick="togglePopup()">Login</button>
-
-<div id="popup" class="popup-overlay">
-  <div class="popup-box">
-    <h3>LOGIN</h3><br>
-    <form action="https://login.kassandraraudman.com" target="_blank">
-  <button type="submit">Client Portal</button>
-</form><br>
-<form action="https://editor.kassandraraudman.com" target="_blank">
-  <button type="submit">Editor Portal</button>
-</form>
-    <button class="close-btn" onclick="togglePopup()">X</button>
-  </div>
+<div>
+  <h1 class="title-main">
+    <span class="first-line">KASSANDRA RAUDMAN</span><br>
+    <span class="second-line">FREELANCE VIDEO EDITOR &amp; CONTENT MANAGER</span>
+  </h1>
 </div>
 
-  </div>
+<!-- ✅ Fixed Bottom Button Bar -->
+<div class="fixed-buttons">
+  <a href="https://www.youtube.com/@kassandraraudman" class="bar-button" target="_blank">
+    <img src="https://i.postimg.cc/ryWPdrMW/profile.png">
+    <span class="btn-label">Portfolio</span>
+  </a>
+  <a href="mailto:kassandraraudman@gmail.com" class="bar-button">
+    <img src="https://i.postimg.cc/Jh4JsbDD/email.png">
+    <span class="btn-label">Contact</span>
+  </a>
+  <a href="https://login.kassandraraudman.com" class="bar-button">
+    <img src="https://i.postimg.cc/2Sc72kVY/logout.png">
+    <span class="btn-label">Login</span>
+  </a>
+</div>
 
-<script>
-  function togglePopup() {
-    const popup = document.getElementById('popup');
-    popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
-  }
-</script>
 
 </body>
 </html>
